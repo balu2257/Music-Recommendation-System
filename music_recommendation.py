@@ -16,7 +16,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import streamlit as st
 
 def load_data():
-    df = pd.read_csv("C:/Users/balak/Downloads/song.csv")
+    df = pd.read_csv("song.zip")
     df.dropna(inplace=True)  # Handle missing values
     return df
 
