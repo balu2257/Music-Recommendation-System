@@ -9,8 +9,6 @@ Original file is located at
 
 import pandas as pd
 import numpy as np
-import pickle
-import joblib
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -23,8 +21,6 @@ def load_data():
 
 df = load_data()
 st.title("Music Recommendation System")
-st.write("### Dataset Preview")
-st.dataframe(df.head())
 
 # Display summary statistics
 st.write("### Summary Statistics")
@@ -63,6 +59,9 @@ for i in range(len(cosine_similarities)):
 st.write(f"### Top 2 Similar Songs to '{songs['song'].iloc[song_index]}'")
 for song, artist in similarities[songs['song'].iloc[song_index]]:
     st.write(f"{song} by {artist}")
+
+st.write("### Dataset Preview")
+st.dataframe(df.head())
  
 
     
